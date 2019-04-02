@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Test.Database.Sach>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TenSach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GiaSach)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenTacGia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoTrang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuongConLai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoLuongXem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoTa)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GiaSach)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenTacGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTrang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongConLai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuongXem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
